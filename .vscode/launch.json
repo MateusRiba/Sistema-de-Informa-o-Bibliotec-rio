@@ -1,51 +1,44 @@
 {
-    // Versão do formato de configuração (não altere se não souber).
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug C++ (GDB/LLDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "setupCommands": [
         {
-            "name": "Debug C++ (GDB/LLDB)",
-            "type": "cppdbg",
-            "request": "launch",
-
-            // Altere aqui para o caminho do seu executável de saída.
-            // Exemplo no Linux/macOS:   "${workspaceFolder}/build/meu_projeto"
-            // Exemplo no Windows:       "${workspaceFolder}/build/meu_projeto.exe"
-            "program": "${workspaceFolder}/build/main",
-
-            // Argumentos passados na linha de comando, se desejar:
-            "args": [],
-
-            // Se quiser parar na função main logo ao iniciar, use true:
-            "stopAtEntry": true,
-
-            // Diretorio de trabalho durante a execução do programa.
-            "cwd": "${workspaceFolder}",
-
-            // Se quiser usar variáveis de ambiente, defina-as aqui:
-            "environment": [],
-
-            // Se quiser usar terminal externo para a depuração, troque para true.
-            "externalConsole": true,
-
-            // Define qual debugger usar.
-            // "MIMode": "gdb" ou "lldb", dependendo do que você tiver instalado.
-            "MIMode": "gdb",
-
-            // Se estiver no Windows e tiver o GDB do MinGW/WSL, você pode especificar aqui:
-            // "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
-            // (Ajuste conforme seu local de instalação.)
-
-            // Ativa "pretty-printing" (formatos mais legíveis para STL, etc.).
-            "setupCommands": [
-                {
-                    "description": "Ativa pretty printing",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-
-            // Tarefa de compilação a ser executada antes de iniciar o debug:
-            "preLaunchTask": "build"
+          "description": "Ativa pretty printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ],
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/giova/Desktop/projeto-edoo/Sistema-de-Informa-o-Bibliotec-rio",
+      "program": "c:/Users/giova/Desktop/projeto-edoo/Sistema-de-Informa-o-Bibliotec-rio/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
 }
